@@ -7,6 +7,13 @@ This is the PyTorch implementation of complementary label learning method **PLNL
 - PyTorch 1.13
 - torchvision 0.14
 
+## Prepare
+To run experiments smoothly, please make the following preparations.
+
+1. Install requirements listed above.
+2. Create necessary directories.
+3. ...
+
 ## Run
 Tune the parameters in bash file "run.sh", and run the following prompt in terminal.
 
