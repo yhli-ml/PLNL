@@ -16,6 +16,7 @@ Complementary label learning (CLL) is a weakly supervised learning paradigm that
 - numpy 1.24
 - PyTorch 1.13
 - torchvision 0.14
+- faiss 1.7.4
 
 ## Prepare
 To run experiments smoothly, please make the following preparations.
