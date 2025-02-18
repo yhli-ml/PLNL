@@ -2,7 +2,7 @@
 
 [[paper](https://openreview.net/pdf?id=LPRxGZ7Oax)], [[video(to be continued...)]()], [[poster(to be continued...)]()]
 
-This repository is the offitial PyTorch implementation for the **ICLR2025** paper "Complementary Label Learning with Positive Label Guessing and Negative Label Enhancements". This repository includes several baseline methods in CLL.
+This repository is the offitial PyTorch implementation for the **ICLR 2025** paper "Complementary Label Learning with Positive Label Guessing and Negative Label Enhancements". This repository includes several baseline methods in CLL.
 
 <b>Title</b>: <i>Complementary Label Learning with Positive Label Guessing and Negative Label Enhancements</i>\
 <b>Authors</b>: Yuhang Li, Zhuying Li, Yuheng Jia \
@@ -72,7 +72,6 @@ PLNL
 │   │   ├── data_batch_3
 │   │   ├── data_batch_4
 │   │   ├── data_batch_5
-│   │   ├── cifar-10-python.tar.gz
 │   │   ├── batches.meta
 │   │   └── test_batch
 │   ├── cifar-100-python
@@ -81,9 +80,11 @@ PLNL
 │   │   ├── test
 │   │   └── train
 │   ├── cifar-100-python.tar.gz
+│   ├── cifar-10-python.tar.gz
 │   ...
 ├── logits
 ├── results
+├── main.py
 ...
 ```
 
