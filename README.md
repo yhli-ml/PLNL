@@ -136,11 +136,11 @@ bash run.sh
 If you find our work useful for your research, please use the following BibTeX entry. Thank you very much!
 ```
 @inproceedings{
-li2025complementary,
-title={Complementary Label Learning with Positive Label Guessing and Negative Label Enhancement},
-author={Yuhang Li and Zhuying Li and Yuheng Jia},
-booktitle={The Thirteenth International Conference on Learning Representations},
-year={2025},
+  li2025complementary,
+  title={Complementary Label Learning with Positive Label Guessing and Negative Label Enhancement},
+  author={Yuhang Li and Zhuying Li and Yuheng Jia},
+  booktitle={The Thirteenth International Conference on Learning Representations},
+  year={2025},
 }
 ```
 
