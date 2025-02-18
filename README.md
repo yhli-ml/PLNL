@@ -135,11 +135,12 @@ bash run.sh
 ## 4. Citation
 If you find our work useful for your research, please use the following BibTeX entry. Thank you very much!
 ```
-@inproceedings{li2025complementary,
-  author={Yuhang Li and Zhuying Li and Yuheng Jia},
-  title={Complementary Label Learning with Positive Label Guessing and Negative Label Enhancement},
-  booktitle={International Conference on Learning Representations},
-  year={2025}
+@inproceedings{
+li2025complementary,
+title={Complementary Label Learning with Positive Label Guessing and Negative Label Enhancement},
+author={Yuhang Li and Zhuying Li and Yuheng Jia},
+booktitle={The Thirteenth International Conference on Learning Representations},
+year={2025},
 }
 ```
 
