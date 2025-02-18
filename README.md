@@ -46,7 +46,7 @@ Note that all the experiments are conducted under one single <b>RTX 4090</b>, so
 ### 3.1 Datasets
 
 This code includes eight datasets including:
-CIFAR-10, CIFAR-100, Tiny-ImageNet, Fashion-MNIST, STL-10, SVHN, CLCIFAR-10 and CLCIFAR-20. 
+CIFAR-10, CIFAR-100, Tiny-ImageNet, Fashion-MNIST, STL-10, SVHN, CLCIFAR-10 and CLCIFAR-20.
 
 |Datasets|Download links|
 | --------- | ---- |
@@ -60,6 +60,22 @@ CIFAR-10, CIFAR-100, Tiny-ImageNet, Fashion-MNIST, STL-10, SVHN, CLCIFAR-10 and 
 |CLCIFAR-20|[link](https://github.com/ntucllab/CLImage_Dataset/blob/main)|
 
 If you want to run one of the datasets, please <span style="color:#0099be">download it into your data directory and change the dataset path in python scripts (see the following section)</span>.
+
+### 3.3 Directory settings
+Please create the directories as below:
+```
+PLNL
+├── data-dir
+│   ├── cifar-100-python
+│   │   ├── file.txt~
+│   │   ├── meta
+│   │   ├── test
+│   │   └── train
+│   ├── cifar-100-python.tar.gz
+│   ...
+├── logits
+├── 
+```
 
 ### 3.2 Reproduce the results of PLNL
 In order to reproduce the results of DISC, you need to change the hyper-parameters in the bash scripts ([./run.sh](./run.sh)) for different datasets.
@@ -86,7 +102,11 @@ for method in "${methods[@]}"; do
     for dataset in "${datasets[@]}"; do
         for distr in "${distrs[@]}"; do
             file_path="./results/${method}_${dataset}_${distr}_${nc}_${k}_${t}_${seed}.log"
-            nohup python -u ${method}.py -dataset ${dataset} -distr ${distr} -nc ${nc} -k ${k} -t ${t} -gpu ${gpu} -lr ${lr} -seed ${seed} > ${file_path} 2>&1 &
+            log_dir=$(dirname "${file_path}")
+            mkdir -p "${log_dir}"
+            nohup python -u ${method}.py -dataset ${dataset} \
+            -distr ${distr} -nc ${nc} -k ${k} -t ${t} \
+            -gpu ${gpu} -lr ${lr} -seed ${seed} > ${file_path} 2>&1 &
         done
         if [ $gpu -eq 7 ]; then
             ((gpu=0))
