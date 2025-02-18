@@ -4,9 +4,7 @@
 
 This repository is the offitial PyTorch implementation for the **ICLR 2025** paper "Complementary Label Learning with Positive Label Guessing and Negative Label Enhancements". This repository includes several baseline methods in CLL.
 
-<b>Title</b>: <i>Complementary Label Learning with Positive Label Guessing and Negative Label Enhancements</i>\
-<b>Authors</b>: Yuhang Li, Zhuying Li, Yuheng Jia \
-<b>Institute</b>: Southeast University
+<b>Title</b>: <i>Complementary Label Learning with Positive Label Guessing and Negative Label Enhancements</i>
 
 <b>Illustration</b>
 <p align="center">
