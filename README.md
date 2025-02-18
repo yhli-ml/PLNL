@@ -62,10 +62,19 @@ CIFAR-10, CIFAR-100, Tiny-ImageNet, Fashion-MNIST, STL-10, SVHN, CLCIFAR-10 and 
 If you want to run one of the datasets, please <span style="color:#0099be">download it into your data directory and change the dataset path in python scripts (see the following section)</span>.
 
 ### 3.3 Directory settings
-Please create the directories as below:
+Please create the data directories as below and change the parameter `data-dir` in ([./main.py](./main.py)).
 ```
 PLNL
 ├── data-dir
+│   ├── cifar-10-batches-py
+│   │   ├── data_batch_1
+│   │   ├── data_batch_2
+│   │   ├── data_batch_3
+│   │   ├── data_batch_4
+│   │   ├── data_batch_5
+│   │   ├── cifar-10-python.tar.gz
+│   │   ├── batches.meta
+│   │   └── test_batch
 │   ├── cifar-100-python
 │   │   ├── file.txt~
 │   │   ├── meta
@@ -74,7 +83,8 @@ PLNL
 │   ├── cifar-100-python.tar.gz
 │   ...
 ├── logits
-├── 
+├── results
+...
 ```
 
 ### 3.2 Reproduce the results of PLNL
