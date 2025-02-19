@@ -12,7 +12,7 @@ This repository is the offitial PyTorch implementation for the **ICLR 2025** pap
 </p>
 
 ## Contents
-- [DISC](#disc-learning-from-noisy-labels-via-dynamic-instance-specific-selection-and-correction)
+- [PLNL](#Complementary-Label-Learning-with-Positive-Label-Guessing-and-Negative-Label-Enhancement)
   - [1. Abstract](#1-abstract)
   - [2. Requirements](#2-requirements)
   - [3. Experiments with PLNL](#3-experiments-with-plnl)
