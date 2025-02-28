@@ -2,7 +2,7 @@
 
 [[paper](https://openreview.net/pdf?id=LPRxGZ7Oax)], [[video(to be continued...)]()], [[poster(to be continued...)]()]
 
-This repository is the offitial PyTorch implementation for the **ICLR 2025** paper "Complementary Label Learning with Positive Label Guessing and Negative Label Enhancements". This repository includes several baseline methods in CLL.
+This repository is the official PyTorch implementation for the **ICLR 2025** paper "Complementary Label Learning with Positive Label Guessing and Negative Label Enhancements". This repository includes several baseline methods in CLL.
 
 <b>Title</b>: <i>Complementary Label Learning with Positive Label Guessing and Negative Label Enhancements</i>
 
