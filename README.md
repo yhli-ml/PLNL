@@ -8,7 +8,7 @@ This repository is the official PyTorch implementation for the **ICLR 2025** pap
 
 <b>Illustration</b>
 <p align="center">
-  <img width="90%" src="./img/pipeline.png" alt="The framework of PLNL"/>
+  <img width="90%" src="./img/framework.png" alt="The framework of PLNL"/>
 </p>
 
 ## Contents
