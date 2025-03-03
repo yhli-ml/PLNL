@@ -87,7 +87,7 @@ PLNL
 ```
 
 ### 3.2 Reproduce the results of PLNL
-In order to reproduce the results of DISC, you need to change the hyper-parameters in the bash scripts ([./run.sh](./run.sh)) for different datasets.
+In order to reproduce the results of PLNL, you need to change the hyper-parameters in the bash scripts ([./run.sh](./run.sh)) for different datasets.
 
 ```bash
 #!/bin/bash
@@ -125,7 +125,7 @@ for method in "${methods[@]}"; do
     done
 done
 ```
-If you want to run the results of DISC on CIFAR-10 with single complementary label, please <span style="color:#0099be">change the data directory as yours</span>  and run the following command:
+If you want to run the results of PLNL on CIFAR-10 with single complementary label, please <span style="color:#0099be">change the data directory as yours</span>  and run the following command:
 ```shell
 bash run.sh
 ```
