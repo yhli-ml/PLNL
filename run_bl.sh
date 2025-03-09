@@ -1,4 +1,5 @@
 #!/bin/bash
+# run baseline
 method='scl-log'
 
 dataset='cifar100'
