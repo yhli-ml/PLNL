@@ -11,14 +11,13 @@ from utils.utils_data import *
 from utils.utils_algo import *
 from models.preactresnet import *
 import torchvision
-import wandb
 
 parser = argparse.ArgumentParser(description='Learning from Multiple Complementary Labels(LOG loss)')
 
 parser.add_argument('-dataset', type=str, choices=['mnist', 'kmnist', 'fmnist', 'tinyimagenet', 'cifar10', 'cifar100', 'svhn', 'stl'], required=True)
 parser.add_argument('-distr', type=int, help='usage of uniform distribution',required=True)
 parser.add_argument('-nc', default=1, type=int, help="number of complementary labels")
-parser.add_argument('-me', default='SCL-EXP', type=str)
+parser.add_argument('-me', default='UB-EXP', type=str)
 
 parser.add_argument('-eps', default=200, type=int, metavar='N', help='number of total epochs to run')
 parser.add_argument('-bs', default=64, type=int)
@@ -32,7 +31,6 @@ parser.add_argument('-seed', default=0, type=int)
 
 args = parser.parse_args()
 print(args)
-wandb.init(project='Compared Methods', config=args, name=f'{args.me}_{args.dataset}_distr{args.distr}_nc{args.nc}')
 
 random.seed(args.seed)
 np.random.seed(args.seed)
@@ -97,7 +95,7 @@ def comp_train(train_loader, model, optimizer, epoch):
         data_time.update(time.time() - end)
         images, comp_y = x_aug0.cuda(), comp_y.float().cuda()
         outputs = model(images)
-        loss = scl_exp_loss(outputs=outputs, comp_y=comp_y.float())
+        loss = ub_exp_loss(outputs=outputs, comp_y=comp_y.float())
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
@@ -160,7 +158,7 @@ def test(test_loader, model, criterion, epoch):
     return top1.avg, losses.avg
 
 
-def scl_exp_training():
+def ub_exp_training():
     global args, best_prec1
 
     # load data
@@ -198,10 +196,9 @@ def scl_exp_training():
         scheduler.step()
         # evaluate on validation set
         valacc, valloss = test(test_loader, model, criterion, epoch)
-        wandb.log({"Accuracy":valacc})
 
 
 if __name__ == '__main__':
-    scl_exp_training()
+    ub_exp_training()
 
 

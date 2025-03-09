@@ -1,6 +1,6 @@
 #!/bin/bash
 
-methods="plnl"
+methods="./methods/plnl"
 data_dir="/nas/datasets"
 datasets="stl10"
 distrs=0
