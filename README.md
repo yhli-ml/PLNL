@@ -122,7 +122,8 @@ done
 ```
 For example, the above provides how to run the results of PLNL on STL-10 with single complementary label, please change the `data_dir` as yours and run the following command:
 ```shell
-bash run.sh
+cd PLNL
+bash ./experiment/run.sh
 ```
 
 ## 4. Citation
