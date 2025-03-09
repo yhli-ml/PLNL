@@ -80,32 +80,27 @@ PLNL
 │   ├── cifar-100-python.tar.gz
 │   ├── cifar-10-python.tar.gz
 │   ...
-├── logits
-├── results
-├── main.py
+├── plnl.py
 ...
 ```
 
 ### 3.2 Reproduce the results of PLNL
-In order to reproduce the results of PLNL, you need to change the hyper-parameters in the bash scripts ([./run.sh](./run.sh)) for different datasets.
+In order to reproduce the results of PLNL, you need to change the hyper-parameters in the bash scripts ([./run.sh](./run.sh)) as follows.
 
 ```bash
 #!/bin/bash
 
-methods=("main")
-
-datasets=("cifar10" "cifar100" "stl")
-distrs=(0 1)
+methods="plnl"
+data_dir="/nas/datasets"
+datasets="stl10"
+distrs=0
 nc=1
 
-lr=0.05
-k=500
+k=250
 t=0.1
 
-gpu=3
+gpu=0
 seed=999
-
-time=$(date +"%Y-%m-%d %H:%M:%S")
 
 for method in "${methods[@]}"; do
     for dataset in "${datasets[@]}"; do
@@ -113,9 +108,9 @@ for method in "${methods[@]}"; do
             file_path="./results/${method}_${dataset}_${distr}_${nc}_${k}_${t}_${seed}.log"
             log_dir=$(dirname "${file_path}")
             mkdir -p "${log_dir}"
-            nohup python -u ${method}.py -dataset ${dataset} \
+            nohup python -u ${method}.py -dataset ${dataset} -data-dir ${data_dir}\
             -distr ${distr} -nc ${nc} -k ${k} -t ${t} \
-            -gpu ${gpu} -lr ${lr} -seed ${seed} > ${file_path} 2>&1 &
+            -gpu ${gpu} -seed ${seed} > ${file_path} 2>&1 &
         done
         if [ $gpu -eq 7 ]; then
             ((gpu=0))
@@ -125,7 +120,7 @@ for method in "${methods[@]}"; do
     done
 done
 ```
-If you want to run the results of PLNL on CIFAR-10 with single complementary label, please <span style="color:#0099be">change the data directory as yours</span>  and run the following command:
+For example, the above provides how to run the results of PLNL on STL-10 with single complementary label, please change the `data_dir` as yours and run the following command:
 ```shell
 bash run.sh
 ```
