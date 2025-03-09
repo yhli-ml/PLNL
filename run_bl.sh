@@ -1,6 +1,6 @@
 #!/bin/bash
 # run baseline
-method='scl-log'
+method='./methods/scl-log'
 
 dataset='cifar100'
 distr=0
