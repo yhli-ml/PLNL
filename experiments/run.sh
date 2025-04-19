@@ -1,5 +1,4 @@
 #!/bin/bash
-
 methods=("./methods/plnl")
 data_dir="/nas/datasets"
 datasets=("stl10")
