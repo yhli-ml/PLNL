@@ -1,9 +1,9 @@
 #!/bin/bash
 
-methods="./methods/plnl"
+methods=("./methods/plnl")
 data_dir="/nas/datasets"
-datasets="stl10"
-distrs=0
+datasets=("stl10")
+distrs=(0)
 nc=1
 
 k=500

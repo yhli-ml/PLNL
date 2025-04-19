@@ -7,7 +7,7 @@ distr=0
 nc=50
 
 lr=0.1 # 0.01 for stl
-gpu=3
+gpus=3
 seed=1
 bs=64
 
