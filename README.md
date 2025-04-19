@@ -105,7 +105,7 @@ index=0
 for method in "${methods[@]}"; do
     for dataset in "${datasets[@]}"; do
         for distr in "${distrs[@]}"; do
-            gpu=${gpus[$index]}                              # 选取当前 GPU
+            gpu=${gpus[$index]}
             index=$(( (index + 1) % ${#gpus[@]} ))
             file_path="./results/${method}_${dataset}_${distr}_${nc}_${k}_${t}_${seed}.log"
             log_dir=$(dirname "${file_path}")
